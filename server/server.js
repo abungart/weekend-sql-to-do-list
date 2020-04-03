@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // STATIC FILE SETUP
-app.use(express.static("public"));
+app.use(express.static("server/public"));
 
 // Setting up routes
 app.use("/tasks", taskRouter);
