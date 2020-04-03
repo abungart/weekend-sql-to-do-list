@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 
 // Setting up routes
-// app.use("/tasks", taskRouter);
+app.use("/tasks", taskRouter);
 
 app.listen(PORT, () => {
   console.log("Server running on PORT:", PORT);
