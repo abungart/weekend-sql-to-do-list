@@ -40,4 +40,20 @@ router.post("/", (req, res) => {
     });
 });
 
+// DELETE ROUTE
+router.delete("/:id", (req, res) => {
+  const taskId = req.params.id;
+  const queryText = `DELETE FROM "todo" WHERE "id" = $1;`;
+
+  pool
+    .query(queryText, [taskId])
+    .then((responseDb) => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log("Error deleting song:", err);
+      res.sendStatus(500);
+    });
+});
+
 module.exports = router;
