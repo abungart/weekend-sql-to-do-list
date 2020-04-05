@@ -6,10 +6,6 @@ This application allows a user to input their to-do list and manage all of the e
 
 To see the fully functional site, please visit: [DEPLOYED VERSION OF APP](www.heroku.com)
 
-## Screen Shot
-
-Include one or two screen shots of your project here (optional). Remove if unused.
-
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/)

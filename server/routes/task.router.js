@@ -4,7 +4,7 @@ const pool = require("../modules/pool");
 
 // GET ROUTE
 router.get("/", (req, res) => {
-  const queryText = `SELECT * FROM "todo" ORDER BY "username" DESC;`;
+  const queryText = `SELECT * FROM "todo" ORDER BY "username" ASC;`;
   pool
     .query(queryText)
     .then((responseDB) => {
@@ -28,7 +28,7 @@ router.post("/", (req, res) => {
     .query(queryText, [
       taskFromClient.name,
       taskFromClient.task,
-      taskFromClient.completed,
+      taskFromClient.complete,
     ])
     .then((responseDb) => {
       console.log(responseDb);
@@ -52,6 +52,25 @@ router.delete("/:id", (req, res) => {
     })
     .catch((err) => {
       console.log("Error deleting song:", err);
+      res.sendStatus(500);
+    });
+});
+
+// PUT ROUTE
+router.put("/:id", (req, res) => {
+  const taskId = req.params.id;
+  const completeData = req.body;
+  const queryText = `UPDATE "todo"
+    SET "task_completed"=$1
+    WHERE "id" = $2;`;
+
+  pool
+    .query(queryText, [completeData.complete, taskId])
+    .then((responseDb) => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log("Error updating task:", err);
       res.sendStatus(500);
     });
 });
