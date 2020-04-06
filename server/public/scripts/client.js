@@ -124,7 +124,7 @@ function render(taskList) {
           <button class="js_complete_btn" data-id="${taskItem.id}">Complete</button>
         </td>
         <td>
-          <button class="js_delete_btn" data-id="${taskItem.id}">DELETE</button>
+          <button class="js_delete_btn btn" data-id="${taskItem.id}">DELETE</button>
         </td>
       </tr>
     `);
@@ -141,7 +141,7 @@ function render(taskList) {
           Complete!
         </td>
         <td>
-          <button class="js_delete_btn" data-id="${taskItem.id}">DELETE</button>
+          <button class="js_delete_btn btn" data-id="${taskItem.id}">DELETE</button>
         </td>
       </tr>
     `);

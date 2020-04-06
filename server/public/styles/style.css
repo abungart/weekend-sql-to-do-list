@@ -1,6 +1,22 @@
+body {
+  margin: 0;
+  height: 100%;
+}
+
+h1,
+h2 {
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
+}
+
+th {
+  border: 1px solid black;
+  background-color: azure;
 }
 
 th,
@@ -11,6 +27,18 @@ td {
 
 tr:nth-child(even) {
   background-color: #f2f2f2;
+}
+
+.btn {
+  background-color: rgb(18, 182, 194);
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  padding: 5px 5px;
+  cursor: pointer;
+}
+
+#newTask {
+  text-align: center;
 }
 
 #table_head {
